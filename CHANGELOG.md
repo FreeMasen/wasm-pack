@@ -1,5 +1,101 @@
 # Changelog
 
+## 🌟 0.4.0
+
+This release has a ton of awesome things in it, but the best thing is that
+all of this awesome work is brought to you by a **new** contributor to
+`wasm-pack`. Welcome ya'll! we're so glad to have you!
+
+### ✨ Features
+
+- #### 🎏 New Flags
+
+  - **`--skip-build` flag for the init command - [kohensu], [pull/151]**
+
+    Sometimes you want to run some of the shorter meta-data steps that
+    `wasm-pack init` does for you without all the longer build steps. Now
+    you can! Additionally, this PR was a fantastic refactor that allows even
+    more custom build configurations will be simple to implement!
+
+    [kohensu]: https://github.com/kohensu
+    [pull/151]: https://github.com/ashleygwilliams/wasm-pack/pull/151
+
+  - **`--debug` flag for the init command - [clanehin], [pull/127]**
+
+    Find yourself needing to compile your Rust in `development` mode? You can now
+    pass the `--debug` flag to do so! Thanks so much to [clanehin] for filing 
+    [issue/126] for this feature... and then implementing it!
+
+    [pull/127]: https://github.com/ashleygwilliams/wasm-pack/pull/127
+    [issue/126]: https://github.com/ashleygwilliams/wasm-pack/issues/126
+    [clanehin]: https://github.com/clanehin
+
+
+- #### ✅ New Checks
+
+  - **ensure you have `cdylib` crate type - [kendromelon], [pull/150]**
+
+    One of the biggest mistakes we've seen beginners make is forgetting to declare
+    the `cdylib` crate type in their `Cargo.toml` before running `wasm-pack init`.
+    This PR fixes that, and comes from someone who ran into this exact issue learning
+    about `wasm-pack` at [JSConfEU]! Love when it works out like this.
+
+    [JSConfEU]: https://2018.jsconf.eu/
+    [kendromelon]: https://github.com/kedromelon
+    [pull/150]: https://github.com/ashleygwilliams/wasm-pack/pull/150
+
+  - **ensure you have declared wasm-bindgen as a dep - [robertohuertasm], [pull/162]**
+
+    Another easy mistake to make is to forget to declare `wasm-bindgen` as a
+    dependency in your `Cargo.toml`. Now `wasm-pack` will check and make sure you
+    have it set before doing a bunch of long build steps :)
+
+    [robertohuertasm]: https://github.com/robertohuertasm
+    [pull/162]: https://github.com/ashleygwilliams/wasm-pack/pull/162
+
+### 🤕 Fixes
+
+- **fixed broken progress bar spinner - [migerh], [pull/164]**
+
+  Oh no! We broke the progress bar spinner in version 0.3.0. Thankfully, it's
+  fixed now- with a thoughtful refactor that also makes the underlying code
+  sounder overall.
+
+[migerh]: https://github.com/migerh
+[pull/164]: https://github.com/ashleygwilliams/wasm-pack/pull/164
+
+### 🛠️ Maintenance
+
+- **wasm category for crates.io discovery- [TomasHubelbauer], [pull/149]**
+
+  [crates.io] has [categories] to help folks discover crates, be we weren't
+  leveraging it! Now- if you explore the [`wasm` category] on [crates.io]
+  you'll see `wasm-pack`!
+
+[crates.io]: https://crates.io/
+[categories]: https://crates.io/categories
+[`wasm` category]: https://crates.io/categories/wasm
+[TomasHubelbauer]: https://github.com/TomasHubelbauer
+[pull/149]: https://github.com/ashleygwilliams/wasm-pack/pull/149
+
+- **human panic is now 1.0.0 - [spacekookie], [pull/156]**
+
+  Congrats friends! We like what you do.
+
+[pull/156]: https://github.com/ashleygwilliams/wasm-pack/pull/156
+[spacekookie]: https://github.com/spacekookie
+
+### 📖 Documentation
+
+- **cleaned up the README - [ashleygwilliams], [pull/155]**
+
+  Our `README` was struggling with a common problem- doing too much at once.
+  More specifically, it wasn't clear who the audience was, contributers or 
+  end users? We've cleaned up our README and created a document specifically
+  to help contributors get up and running.
+
+[pull/155]: https://github.com/ashleygwilliams/wasm-pack/pull/155
+
 ## 🌠 0.3.1
 
 Babby's first point release! Are we a real project now?
